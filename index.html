@@ -224,8 +224,10 @@
                             </div>
                     
                     <div id="text-box" style="visibility:hidden z-index:0" class="mt-6 text-center text-white" data-aos="fade-up" data-aos-delay="300">
-                        <h1 class="text-3xl md:text-4xl font-bold mb-4">Majestic Chickens</h1>
-                        <p class="text-lg text-gray-300">Admire the beauty and elegance of these magnificent birds.</p>
+                        <!-- Placeholder for "Majestic Chickens" -->
+						<h1 class="text-3xl md:text-4xl font-bold mb-4"></h1>
+						<!-- Placeholder for "Admire the beauty and elegance of these magnificent birds." -->
+                        <p class="text-lg text-gray-300"></p>
  
                     </div>
                 </div>
@@ -350,7 +352,7 @@
         // Image loading handlers - Defined first to avoid reference errors
         function imageLoaded(id) {
             if (id) {
-                console.log(`Image ${id} loaded successfully`);
+                // console.log(`Image ${id} loaded successfully`);
                 document.getElementById('image-loading').style.display = 'none';
 
             }
@@ -449,6 +451,13 @@
                                      
                                     // Show the current slide
                                     setTimeout(() => {
+										if (currentSlide != 1) {
+											const heading = titleElement.querySelector('h1');
+											heading.textContent = 'Majestic Chickens';
+											const paragraph = titleElement.querySelector('p');
+											paragraph.textContent = 'Admire the beauty and elegance of these magnificent birds.';
+										
+										}
                                         if (currentSlide === 1) {
                                             image1.style.transform = 'scale(1)';
                                             image1.style.opacity = '1';
